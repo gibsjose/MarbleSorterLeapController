@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		D8F1F74D18011C40003614B2 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D8F1F74C18011C40003614B2 /* main.cpp */; };
 		D8F1F74F18011C40003614B2 /* TermProject.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = D8F1F74E18011C40003614B2 /* TermProject.1 */; };
+		D8F1F75818011C90003614B2 /* libLeap.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D8F1F75718011C90003614B2 /* libLeap.dylib */; };
+		D8F1F75A18011CCD003614B2 /* libLeap.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = D8F1F75718011C90003614B2 /* libLeap.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -22,12 +24,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
+		D8F1F75918011CAB003614B2 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 6;
+			files = (
+				D8F1F75A18011CCD003614B2 /* libLeap.dylib in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		D8F1F74918011C40003614B2 /* TermProject */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = TermProject; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8F1F74C18011C40003614B2 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		D8F1F74E18011C40003614B2 /* TermProject.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = TermProject.1; sourceTree = "<group>"; };
+		D8F1F75518011C7E003614B2 /* Leap.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Leap.h; path = "../../../../../../Leap Motion/LeapDeveloperKit/LeapSDK/include/Leap.h"; sourceTree = "<group>"; };
+		D8F1F75618011C7E003614B2 /* LeapMath.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LeapMath.h; path = "../../../../../../Leap Motion/LeapDeveloperKit/LeapSDK/include/LeapMath.h"; sourceTree = "<group>"; };
+		D8F1F75718011C90003614B2 /* libLeap.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libLeap.dylib; path = "../../../../../../Leap Motion/LeapDeveloperKit/LeapSDK/lib/libc++/libLeap.dylib"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8F1F75818011C90003614B2 /* libLeap.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +60,9 @@
 		D8F1F74018011C40003614B2 = {
 			isa = PBXGroup;
 			children = (
+				D8F1F75718011C90003614B2 /* libLeap.dylib */,
+				D8F1F75518011C7E003614B2 /* Leap.h */,
+				D8F1F75618011C7E003614B2 /* LeapMath.h */,
 				D8F1F74B18011C40003614B2 /* TermProject */,
 				D8F1F74A18011C40003614B2 /* Products */,
 			);
@@ -76,6 +95,7 @@
 				D8F1F74518011C40003614B2 /* Sources */,
 				D8F1F74618011C40003614B2 /* Frameworks */,
 				D8F1F74718011C40003614B2 /* CopyFiles */,
+				D8F1F75918011CAB003614B2 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -127,7 +147,7 @@
 		D8F1F75018011C40003614B2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -160,7 +180,7 @@
 		D8F1F75118011C40003614B2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -186,6 +206,10 @@
 		D8F1F75318011C40003614B2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../../../../../Leap Motion/LeapDeveloperKit/LeapSDK/lib/libc++\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -193,6 +217,10 @@
 		D8F1F75418011C40003614B2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../../../../../Leap Motion/LeapDeveloperKit/LeapSDK/lib/libc++\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
